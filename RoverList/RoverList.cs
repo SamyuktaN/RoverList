@@ -129,22 +129,6 @@ namespace RoverList
 
         }
 
-        public void DeleteOddWord()
-        {
-            current = head;
-            int internalCount = 0;
-            while (current != null)
-            {
-                if (current.ToString().Length % 2 != 0)
-                {
-                    RemoveAt(internalCount);
-                }
-                current = current.Next;
-                internalCount++;
-            }
-
-        }
-
         public override bool RemoveAt(int Position)
         {
             bool removed = false;

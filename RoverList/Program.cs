@@ -29,10 +29,10 @@ namespace RoverList
             list.Add("glasses");
             list.Add("computer");
 
-           list.ListNodes();
+            list.ListNodes();
 
             Console.WriteLine("Please enter some words:");
-            while(true)
+            while (true)
             {
 
                 Console.Write("> ");
@@ -41,7 +41,7 @@ namespace RoverList
                 if (line == "done")
                     break;
 
-                list.Add(line); 
+                list.Add(line);
             }
             Console.WriteLine("");
 
@@ -58,7 +58,7 @@ namespace RoverList
                 if (line == "done")
                     break;
 
-                list.Add(0, line); 
+                list.Add(0, line);
             }
             Console.WriteLine("");
 
@@ -68,7 +68,18 @@ namespace RoverList
             Console.WriteLine("Now I will remove all odd words");
             Console.WriteLine("");
 
-            list.DeleteOddWord();
+
+            int count = list.Count - 1;
+            while (count >= 0)
+            {
+                var word = list.ElementAt(count);
+
+                if (word.Length % 2 != 0)
+                {
+                    list.RemoveAt(count);
+                }
+                count--;
+            }
 
             Console.WriteLine("");
             list.ListNodes();
